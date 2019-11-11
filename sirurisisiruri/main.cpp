@@ -12,9 +12,9 @@ int main()
             cout<<sirHeap<< endl;
             cout<<"numarul elementelor:"<<sizeof(sirStack)<<endl;
        }
-        char varContor=1;
-            for(int j=0; j<=16; j++);
-             if (varContor=" ")
+        int varContor=1;
+            for(int j=0; j<sizeof(sirStack); j++)
+             if (sirStack=" ")
              varContor++;
     return 0;
 }
