@@ -13,8 +13,11 @@ int main()
             cout<<"numarul elementelor:"<<sizeof(sirStack)<<endl;
        }
         int varContor=1;
-            for(int j=0; j<sizeof(sirStack); j++)
-             if (sirStack=" ")
+            for(int j=0; j<sizeof(sirStack[j]); j++)
+             {
+             if (sirStack[j]=' ')
              varContor++;
+             }
+             cout<<"textul are "<<varContor<<"cuvinte."<<endl;
     return 0;
 }
