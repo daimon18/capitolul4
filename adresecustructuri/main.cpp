@@ -2,34 +2,39 @@
 
 using namespace std;
 
-        struct modAdr {
-    char prenume[20];
-    char strada [20];
-    char orasul [20];
-    char judetul [20];
-    int numar;
-    int codPostal;
+    struct ModelareAdresa
+    {
+        char prenume[30];
+        char strada[30];
+        char oras[30];
+        char judet[30];
+        int numar;
+        int codPostal;
     };
-
-void citiredelacons (modAdr& adresa)
-{
-    cout<<"introdu prenumele"; cin>>adresa.prenume;
-    cout<<"introdu judetul"; cin>>adresa.judetul;
-    cout<<"introdu orasul"; cin>>adresa.orasul;
-    cout<<"introdu strada"; cin>>adresa.strada;
-    cout<<"introdu numarul"; cin>>adresa.numar;
-    cout<<"introdu cod postal"; cin>>adresa.codPostal;
-}
-
-void afisarea (modAdr adresa)
-{
-    cout<<" Ma numesc"<<adresa.prenume<<endl;
-    cout << "M-am nascut in judetul " << adresa.judetul << ", in orasul " << adresa.orasul << ", pe strada " << adresa.strada << ", la numarul " << adresa.numar <<", cu codul postal:"<<adresa.codPostal<< endl;
-}
+    void introDate(ModelareAdresa& adresa1)
+    {
+        cout<<"Cum te numesti? "<<endl;
+        cin>>adresa1.prenume;
+        cout<<"In ce judet te-ai nascut? "<<endl;
+        cin>>adresa1.judet;
+        cout<<"Dar orasul? "<<endl;
+        cin>>adresa1.oras;
+        cout<<"Mai exact,pe ce strada? "<<endl;
+        cin>>adresa1.strada;
+        cout<<"Si la ce numar? "<<endl;
+        cin>>adresa1.numar;
+        cout<<"Stii si codul postal? "<<endl;
+        cin>>adresa1.codPostal;
+    }
+        void Afisam (ModelareAdresa& adresa1)
+        {
+            cout<<"Ma numesc "<<adresa1.prenume<<endl;
+            cout<<"M-am nascut in judetul "<<adresa1.judet<<", in orasul "<<adresa1.oras<<", pe strada "<<adresa1.strada<<" ,"<<endl<<" cu numarul "<<adresa1.numar<<", si codul postal "<<adresa1.codPostal<<" ."<<endl;
+        }
     int main()
-{
-    modAdr adresa;
-    citiredelacons (adresa);
-    afisarea (adresa);
-    return 0;
-}
+    {
+        ModelareAdresa adresa1;
+            introDate(adresa1);
+            Afisam(adresa1);
+    }
+
