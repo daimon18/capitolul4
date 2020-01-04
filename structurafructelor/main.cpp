@@ -1,41 +1,42 @@
 #include <iostream>
-
 using namespace std;
-    enum Tip{mere,pere,banane,capsuni,mure};
-    struct Produs
-    {
-    Tip tipProdus;
-    float cantitate;
-    float pret;
-    };
+
+    enum Tip {banane, mere, avocado, mango, piersici};
+        struct Produs {Tip tipProdus; float cantitate; float pret;};
+
 int main()
 {
- Produs tablou[3];
- double stoc=0;
-    for (int i=0,j; i<3; ++i)
-    {
-        cout<<"introduceti tipul(1-mere,2-pere,3-banane,4-capsuni,5-mure) :";
-        cin>> j;
-        tablou[i].tipProdus= static_cast<Tip>(j);
-        cout<<"introduceti cantitatea: ";
-        cin>>tablou[i].cantitate;
-        cout<<"introduceti pretul: ";
-        cin>>tablou[i].pret;
-    }
-    cout<< "Produs\t Cantitate\t Pret"<<endl;
-        for(int i=0; i<3; ++i)
+    Produs tablou [3];
+    int stoc=0;
+        for (int i=0; i<3; i++)
+        {
+            unsigned short F;
+            cout<<"Introdu un fruct: 1-banane, 2-mere, 3-avocado, 4-mango, 5-piersici ."<<endl;
+            cin >> F;
+            tablou[i].tipProdus= static_cast<Tip>(F);
+            cout<<"Introdu cantitatea."<<endl;
+            cin>>tablou[i].cantitate;
+            cout<<"Introdu pretul."<<endl;
+            cin>>tablou[i].pret;
+        }
+        cout<<"Produs   Cantitate   Pret"<<endl;
+            for(int i=0; i<3; i++)
             {
                 switch (tablou[i].tipProdus)
                 {
-                   case mere: cout<<"Mere"; break;
-                   case pere: cout<<"Pere"; break;
-                   case banane: cout<<"Banane"; break;
-                   case capsuni: cout<<"capsuni"; break;
-                   case mure: cout<<"Mure"; break;
+                    case banane:cout<<"banane";
+                    break;
+                    case mere:cout<<"mere";
+                    break;
+                    case avocado:cout<<"avocado";
+                    break;
+                    case mango:cout<<"mango";
+                    break;
+                    case piersici:cout<<"piersici";
+                    break;
                 }
-                cout<<"\t\t" <<tablou[i].cantitate <<"\t"<<tablou[i].pret<<endl;
-                stoc=stoc+(tablou[i].cantitate * tablou[i].pret);
+                cout<<"\t\t"<<tablou[i].cantitate<<"\t"<<tablou[i].pret<<endl;
+                    stoc=(tablou[i].cantitate*tablou[i].pret);
             }
-                cout<<" valoare stoc: "<<stoc<<endl;
-    return 0;
+                cout<<"Stocul valoreaza: "<<stoc<<endl;
 }
